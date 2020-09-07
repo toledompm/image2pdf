@@ -7,7 +7,7 @@ from helpers.dictListFilter import dictListFilter
 from helpers.moveInputs import moveInputs
 from helpers.pdfGen import pdfGen
 
-inputsPath = input()
+inputsPath = input('Enter the path to your image directory: ')
 inputsPath = inputsPath if inputsPath != '' else 'inputs'
 
 moveInputs(inputsPath)
