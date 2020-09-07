@@ -1,0 +1,2 @@
+def sortSettings(elem):
+    return elem['fileName]
