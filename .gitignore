@@ -1,3 +1,5 @@
 temp
 inputs/*
-helpers/__pycache__
+helpers/__pycache__/*
+output.pdf
+sortSettings.py
