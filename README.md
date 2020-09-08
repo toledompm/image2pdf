@@ -4,19 +4,16 @@ Packages images from a directory into a pdf. Also include helper modules to unzi
 
 Setup
 -----
-`` bash
-pip install fpdf``
+``pip install fpdf``
 
-`` bash
-pip install Pillow``
+``pip install Pillow``
 
 Usage
 -----
 
 execute
 
-`` bash
-python main.py``
+``python main.py``
 
 It will ask you for a path to your image directory (if left blank the script will look for a folder named **inputs/** in the root of the directory). After that the contents of the folder you specified will be copied to a temporary place, all zips will be unziped and finaly, a pdf will be generated from the images the script found (ps: only png and jpg rn)
 
