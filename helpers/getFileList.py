@@ -1,6 +1,5 @@
 from os import walk
 from os.path import splitext
-from os.path import abspath
 from os.path import join
 
 
