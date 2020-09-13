@@ -9,7 +9,8 @@ def pdfGen(pdfFileName, imgList, target):
     pdf = FPDF(unit = "pt", format = [width, height])
 
     for image in imgList:
-        pdf.add_page()
+        pageWidth, pageHeight = Image.open(image['path']).size
+        pdf.add_page('P '+str(pageWidth)+' '+str(pageHeight))
         pdf.image(image['path'], 0, 0)
 
     pdf.output(target + pdfFileName + ".pdf", "F")
