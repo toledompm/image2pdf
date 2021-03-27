@@ -8,6 +8,8 @@ def getFileList(path):
     for (dirPath, dirNames, fileNames) in walk(path):
         for fileName in fileNames:
             fileExtension = splitext(fileName)[1]
-            filePath = join(dirPath,fileName)
-            files.append({"path":filePath,"fileName":fileName,"extension":fileExtension})
+            filePath = join(dirPath, fileName)
+            files.append(
+                {"path": filePath, "fileName": fileName, "extension": fileExtension}
+            )
     return files

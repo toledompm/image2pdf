@@ -1,23 +1,18 @@
-from fpdf import FPDF
 from PIL import Image
 
-def pdfGen(pdfFileName, imgList, target):
 
-    cover = Image.open(imgList[0]['path'])
-    width, height = cover.size
+def pdfGen(pdf_file_name, img_list, target):
+    pdf_file_path = target + pdf_file_name + ".pdf"
 
-    pdf = FPDF(unit = "pt", format = [width, height])
+    pil_image_list = []
+    for img in img_list:
+        pil_image_list.append(Image.open(img["path"]))
 
-    for image in imgList:
-
-        img = Image.open(image['path'])
-        wpercent = (width/float(img.size[0]))
-        hsize = int((float(img.size[1])*float(wpercent)))
-        img = img.resize((width,hsize), Image.ANTIALIAS)
-        img.save(image['path'])
-        
-
-        pdf.add_page()
-        pdf.image(image['path'], 0, 0)
-
-    pdf.output(target + pdfFileName + ".pdf", "F")
+    print("Outputting pdf...")
+    pil_image_list[0].save(
+        pdf_file_path,
+        "PDF",
+        resolution=100.0,
+        save_all=True,
+        append_images=pil_image_list[1:],
+    )
